@@ -1,0 +1,26 @@
+<h2>Llista d'Alumnes</h2>
+    <ul> 
+      @for (alumne of alumnes; track alumne; let i = $index) {
+        <li>{{ alumne.nom }} - @if (alumne.nota < 5) {
+            <span style="color: red;">{{ alumne.nota }}</span>
+          } @else {
+            <span  style="color: blue;">{{ alumne.nota }}</span>
+          }
+          <button class="btn btn-primary" (click)="editarAlumne(i)">Editar</button>
+          <button class="btn btn-primary" (click)="borrarAlumne(i)">Borrar</button>
+        </li>
+      }
+    </ul>
+    Hi ha {{ alumnes.length }} alumnes.
+    <input class="form-control" [(ngModel)]="nouNom" placeholder="Nom">
+    <input  class="form-control"[(ngModel)]="nouNota" type="number" placeholder="Nota">
+    <button class="btn btn-primary" (click)="afegirAlumne()">Afegir Alumne</button>
+    @if (editantIndex !== -1) {
+      <div>
+        <input [(ngModel)]="editNom" placeholder="Nom">
+        <input [(ngModel)]="editNota" type="number" placeholder="Nota">
+        <button class="btn btn-primary" (click)="guardarEdicio()">Guardar</button>
+        <button class="btn btn-danger" (click)="cancelarEdicio()">Cancelar</button>
+      </div>
+    }
+      <button class="btn btn-danger" (click)="esborrarTots()">Esborrar Tots</button>
