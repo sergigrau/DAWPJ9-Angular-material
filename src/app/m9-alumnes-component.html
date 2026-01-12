@@ -1,0 +1,29 @@
+
+    <h1>
+   Llista d'alumnes
+   </h1>
+
+   <div >
+    <input type="text"  placeholder="Entra el nom de l'alumne"  #nom required>
+    <input type="text" placeholder="Entra el npta de l'alumne"  #nota required>
+    <input type="checkbox" #practiques>
+    </div>
+   <button class="btn btn-primary" (click)="afegirAlumne(nom.value, nota.value, practiques.checked)">afegir</button>
+   <button class="btn btn-primary" (click)="esborrarAlumne(nom.value)">esborrar</button>
+
+   
+   <table >
+   <thead >
+     <tr>
+     <th scope="col">#</th>
+       <th scope="col">Nom</th>
+     </tr>
+     <tbody>
+   <tr *ngFor="let alumne of llistaAlumnes;index as i">
+   <th scope="col">{{i+1}}</th>
+    <td> {{alumne.nom}}</td>
+    <td> {{alumne.nota}}</td>
+    <td><input type="checkbox" checked [checked]="alumne.fcts" disabled></td>
+  </tr>
+   </tbody>
+   </table>

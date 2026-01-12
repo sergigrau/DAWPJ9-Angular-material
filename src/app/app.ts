@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { RouterOutlet, RouterLink } from '@angular/router';
+/*
+  * Component principal de l'aplicació
+*/
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
+  selector: 'aplicacio',
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
   protected readonly title = signal('pj9');

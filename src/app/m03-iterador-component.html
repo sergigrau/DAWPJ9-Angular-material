@@ -1,0 +1,24 @@
+
+    <h1>
+   iterador
+   </h1>
+
+   <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Entra el nom de l'alumne"  #alumne required>
+    </div>
+   <button class="btn btn-primary" (click)="afegirAlumne(alumne.value)">afegir</button>
+   <button  class="btn btn-primary"  (click)="esborrarAlumne(alumne.value)">esborrar</button>
+   
+   <table class="table table-striped">
+   <thead class="thead-dark">
+     <tr>
+     <th scope="col">#</th>
+       <th scope="col">Nom</th>
+     </tr>
+     <tbody>
+   <tr *ngFor="let alumne of llistaAlumnes;index as i; first as isPrimer">
+   <th scope="col">{{i+1}}</th>
+    <td> {{alumne}}</td>
+   </tr>
+   </tbody>
+   </table>

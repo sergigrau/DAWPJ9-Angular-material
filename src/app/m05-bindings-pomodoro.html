@@ -1,0 +1,15 @@
+<div class="container text-center">
+    <rellotge [segons]="10" (completat)="onCompteEnreraFinalitza()" #comptador>
+    </rellotge>
+    <rellotge [segons]="20" (completat)="onCompteEnreraFinalitza()" #comptador>
+    </rellotge>
+    <p>
+        <button class="btn btn-default" (click)="comptador.segons = 25">
+          Fer un reset
+</button>
+    </p>
+    <p *ngIf="comptador.segons < 10">
+        Atenció! queden
+        <strong>{{ comptador.segons }} segons</strong>
+    </p>
+</div>
