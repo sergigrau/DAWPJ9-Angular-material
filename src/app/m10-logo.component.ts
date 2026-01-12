@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 /*
     * Component que mostra un logo i una llista de persones carregades des d'un fitxer JSON
@@ -39,6 +39,7 @@ import { CommonModule } from '@angular/common';
 })
 export class M10_LogoComponent implements OnInit {
   persones: Array<{ nom: string; cognom: string }> = [];
+  constructor(private readonly cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     fetch('assets/dades.json')
@@ -48,7 +49,8 @@ export class M10_LogoComponent implements OnInit {
       })
       .then((dades: any) => {
         console.log(dades.persones);
-        this.persones= dades.persones;
+        this.persones = Array.isArray(dades.persones) ? dades.persones : [];
+        this.cdr.detectChanges();
       })
       .catch((err) => {
         console.error('Failed to load assets/dades.json:', err);
