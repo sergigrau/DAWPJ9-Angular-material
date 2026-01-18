@@ -2,7 +2,11 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 /*
     * Component que mostra un logo i una llista de persones carregades des d'un fitxer JSON
-    */
+ * @author sergi.grau@fje.edu
+ * @date 7.11.24
+  * 1-1-2026
+ * - Actualització a Angular 21   
+*/
 
 @Component({
   selector: 'aplicacio',
@@ -39,7 +43,7 @@ import { CommonModule } from '@angular/common';
 })
 export class M10_LogoComponent implements OnInit {
   persones: Array<{ nom: string; cognom: string }> = [];
-  constructor(private readonly cdr: ChangeDetectorRef) {}
+  constructor(private readonly cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     fetch('assets/dades.json')

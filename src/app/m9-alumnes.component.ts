@@ -14,11 +14,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Alumne } from './m9-alumne';
+import { NivellPipe } from './m9-nivell.pipe';
+import { QualificacioPipe } from './m9-qualificacio.pipe';
 
 @Component({
     selector: 'aplicacio',
     standalone: true,
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, NivellPipe, QualificacioPipe],
     template: `
       <div class="container py-3">
         <h1 class="mb-4">Gestió d'alumnes</h1>
@@ -30,6 +32,8 @@ import { Alumne } from './m9-alumne';
                 <th scope="col">#</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Nota</th>
+                <th scope="col">Estrelles</th>
+                <th scope="col">Qualificació</th>
                 <th scope="col">FCTs</th>
                 <th scope="col">Accions</th>
               </tr>
@@ -44,6 +48,8 @@ import { Alumne } from './m9-alumne';
                     {{ alumne.nota }}
                   </span>
                 </td>
+                <td>{{ alumne.nota | nivell }}</td>
+                <td>{{ alumne.nota | qualificacio }}</td>
                 <td>{{ alumne.fcts ? 'Sí' : 'No' }}</td>
                 <td>
                   <button class="btn btn-sm btn-outline-primary me-2" type="button" (click)="editar(i)">Editar</button>

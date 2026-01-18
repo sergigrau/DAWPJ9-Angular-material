@@ -1,0 +1,2 @@
+.demo-area { margin-top:1rem; display:flex; align-items:center; gap:1rem; flex-direction:column; }
+.box { width:120px; height:120px; border-radius:8px; cursor:pointer; }
