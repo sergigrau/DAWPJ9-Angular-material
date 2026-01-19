@@ -1,0 +1,15 @@
+<div>
+  <h3>M12 - Comunicació amb servidor Node</h3>
+
+  <div>
+    <button (click)="consultar()">Consultar alumnes</button>
+    <button (click)="afegir()">Afegir alumne</button>
+    <button (click)="reproduirAudio()">Reproduir audio</button>
+  </div>
+
+  <div *ngIf="loading">Carregant...</div>
+
+  <ul *ngIf="!loading">
+    <li *ngFor="let a of alumnes">{{a.nom}} {{a.cognom}}</li>
+  </ul>
+</div>

@@ -10,6 +10,9 @@ import { M08_PipesComponent } from './m08-pipes.component';
 import { M09_Alumnes_IteradorComponent } from './m9-alumnes.component';
 import { M10_LogoComponent } from './m10-logo.component';
 import { M11_AnimacionsComponent } from './m11-animacions.component';
+import { M12Component } from './m12.component';
+import { M13Component } from './m13-material-missatge';
+import { M14Component } from './m14-material-inputs.component';
 
 export const routes: Routes = [
   { path: 'm01', component: M01_SalutacioComponent },
@@ -23,6 +26,9 @@ export const routes: Routes = [
   { path: 'alumnes', component: M09_Alumnes_IteradorComponent },
   { path: 'm10', component: M10_LogoComponent },
   { path: 'm11', component: M11_AnimacionsComponent },
+  { path: 'm12', component: M12Component },
+  { path: 'm13', component: M13Component },
+  { path: 'm14', component: M14Component },
 
   { path: '', redirectTo: '/m01', pathMatch: 'full' },
   { path: '**', redirectTo: '/m01' }

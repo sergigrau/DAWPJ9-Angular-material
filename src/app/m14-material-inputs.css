@@ -1,0 +1,14 @@
+.m14 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+mat-form-field {
+  width: 200px;
+}
+
+button {
+  width: 120px;
+}

@@ -1,0 +1,17 @@
+<div class="m14">
+  <h3>M14 - Suma amb Material</h3>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre A</mat-label>
+    <input matInput type="number" [(ngModel)]="a">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre B</mat-label>
+    <input matInput type="number" [(ngModel)]="b">
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button color="primary">Suma: {{ sum }}</button>
+  </div>
+</div>
