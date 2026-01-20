@@ -21,7 +21,7 @@ export class M12Service {
    * Recupera tots els alumnes.
    * Retorna un Observable amb la resposta del servidor (tipus any).
    */
-  getAlumnes(): Observable<any> {
+  obtenirAlumnes(): Observable<any> {
     return this.http.get(`${this.base}/consultarTots`);
   }
 
@@ -29,7 +29,7 @@ export class M12Service {
    * Crida per afegir un alumne.
    * (Actualment implementat com a GET a /afegirAlumne.)
    */
-  addAlumne(): Observable<any> {
+  afegirAlumne(): Observable<any> {
     return this.http.get(`${this.base}/afegirAlumne`);
   }
 
@@ -37,14 +37,14 @@ export class M12Service {
    * Sol·licita el fitxer d'àudio com a Blob.
    * Es fa el cast necessari perquè HttpClient requereix un tipus per responseType.
    */
-  getAudio(): Observable<Blob> {
+  obtenirAudio(): Observable<Blob> {
     return this.http.get(`${this.base}/audio1.mp3`, { responseType: 'blob' as 'json' }) as Observable<Blob>;
   }
 
   /**
    * Reprodueix un Blob d'àudio creant una URL temporal i utilitzant l'objecte Audio.
    */
-  playAudioBlob(blob: Blob) {
+  reproduirAudioBlob(blob: Blob) {
     const url = URL.createObjectURL(blob);
     const audio = new Audio(url);
     audio.play();

@@ -5,49 +5,35 @@
   <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" height="80"/>
 </p>
 
-Summary
--------
-Angular project generated with Angular CLI (v21.x). Base application with a typical Angular structure; may include Angular Material depending on project dependencies.
+<h1>Angular Classroom Workshop</h1>
 
-Main structure
---------------
-- src/ - application source code
-  - app/ - components, services and modules
-  - assets/ - images and static resources
-  - environments/ - environment configurations (dev/prod)
-- angular.json - Angular CLI project configuration
-- package.json - dependencies and scripts
-- tsconfig.json - TypeScript configuration
 
-Useful commands
----------------
-- Development: `ng serve` → open http://localhost:4200
-- Build: `ng build`
-- Unit tests (Vitest or configured runner): `ng test`
-- E2E tests: `ng e2e`
+## Files and Descriptions
 
-Components (brief concepts per component)
-----------------------------------------
-The list below is a template. Provide the src/app/*.ts files or paste their contents and I will replace these placeholders with exact summaries.
+- **`src/app/m01-salutacio.component.ts`**: M01 — Greeting: Component that displays a simple welcome message.
 
-- AppComponent — application shell, routing outlet, top-level services
-- HeaderComponent — layout, navigation, Material toolbar/menu
-- FooterComponent — layout and footer content
-- LoginComponent — reactive forms, validation, authentication service integration
-- DashboardComponent — data fetching, RxJS streams, change detection strategies
-- ItemsListComponent — list rendering, async pipes, pagination, filtering
-- ItemDetailComponent — route params, resolver usage, child components
-- MaterialDemoComponent — Angular Material usage: cards, dialogs, snackbars
-- SharedModule — reusable components, directives, and pipes
-- CoreModule — singleton services, interceptors, app-wide providers
+- **`src/app/m02-suma.component.ts`**: M02 — Sum: Example component that performs and displays a sum (inputs/interactions).
 
-How you can help
-----------------
-- Paste the contents of src/app/*.ts (or give access) and I will update the Components section with exact concepts found in each file.
-- Or confirm I should scan the repository to generate the detailed list.
+- **`src/app/m02bis-suma.component.ts`**: M02bis — Sum (variant): Alternative version of the sum component.
 
-Notes
------
-- Check package.json to confirm if Angular Material is installed and to view available scripts.
-- To add components: `ng generate component component-name`
-- For detailed Angular CLI docs: https://angular.dev/tools/cli
+- **`src/app/m03-iterador.component.ts`**: M03 — Iterator: Demonstrates using *ngFor to iterate and render lists.
+
+- **`src/app/m04-pomodoro.component.ts`**: M04 — Pomodoro: Component implementing a Pomodoro-style timer.
+
+- **`src/app/m05-bindings.component.ts`**: M05 — Bindings: Shows property and event bindings (includes Pomodoro template).
+
+- **`src/app/m06-directives.component.ts`**: M06 — Directives: Examples of using/creating custom directives.
+
+- **`src/app/m08-pipes.component.ts`**: M08 — Pipes: Presents custom pipes; see `m8-estrella.pipe.ts` and `m8-inversa.pipe.ts` for examples.
+
+- **`src/app/m9-alumnes.component.ts`**: M09 — Students: Component and models (`m9-alumne.ts`, `m9-persona.ts`) displaying a list of students with pipes (`m9-nivell.pipe.ts`, `m9-qualificacio.pipe.ts`).
+
+- **`src/app/m10-logo.component.ts`**: M10 — Logo: Component that displays/manages the application logo.
+
+- **`src/app/m11-animacions.component.ts`**: M11 — Animations: Demonstrates Angular animations with associated template and CSS.
+
+- **`src/app/m12.component.ts`**: M12 — Services/Composition: Component with an associated service (`m12.service.ts`) and template (`m12.component.html`) showing service communication.
+
+- **`src/app/m13-material-missatge.ts`**: M13 — Material Message: Integration with Angular Material to display messages/dialogs (see related HTML/CSS files).
+
+- **`src/app/m14-material-inputs.component.ts`**: M14 — Material Inputs: Examples of inputs/controls using Angular Material (includes HTML and CSS).

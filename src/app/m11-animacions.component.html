@@ -2,11 +2,11 @@
 <p>Mostra una caixa que anima la mida i apareix/desapareix.</p>
 
 <div style="display:flex; gap:0.5rem; margin-top:0.5rem;">
-  <button (click)="toggleSize()">Canvia mida</button>
-  <button (click)="toggleShow()">{{ show ? 'Amaga' : 'Mostra' }}</button>
+  <button (click)="canviarMida()">Canvia mida</button>
+  <button (click)="canviarMostrar()">{{ estatMostrar ? 'Amaga' : 'Mostra' }}</button>
 </div>
 
-<div *ngIf="show" @fadeInOut class="demo-area">
-  <div class="box" [@boxState]="state" (click)="toggleSize()"></div>
+<div *ngIf="estatMostrar" @fadeInOut class="demo-area">
+  <div class="box" [@boxState]="estatMida" (click)="canviarMida()"></div>
   <p>Fes click a la caixa per alternar la mida.</p>
 </div>

@@ -24,10 +24,9 @@ export class M12Component {
 
   consultar() {
     this.loading = true;
-    this.svc.getAlumnes().subscribe({
+    this.svc.obtenirAlumnes().subscribe({
       next: (res) => {
-        console.log('getAlumnes response:', res);
-        // Accept different response shapes (array, {alumnes: [...]}, {data: [...]})
+        console.log('obtenirAlumnes response:', res);
         if (Array.isArray(res)) {
           this.alumnes = res;
         } else if (res && Array.isArray((res as any).alumnes)) {
@@ -46,9 +45,9 @@ export class M12Component {
 
   afegir() {
     this.loading = true;
-    this.svc.addAlumne().subscribe({
+    this.svc.afegirAlumne().subscribe({
       next: (res) => {
-        console.log('addAlumne response:', res);
+        console.log('afegirAlumne response:', res);
         if (Array.isArray(res)) {
           this.alumnes = res;
         } else if (res && Array.isArray((res as any).alumnes)) {
@@ -66,8 +65,8 @@ export class M12Component {
   }
 
   reproduirAudio() {
-    this.svc.getAudio().subscribe({
-      next: (blob) => { this.svc.playAudioBlob(blob); },
+    this.svc.obtenirAudio().subscribe({
+      next: (blob) => { this.svc.reproduirAudioBlob(blob); },
       error: (err) => console.error(err)
     });
   }

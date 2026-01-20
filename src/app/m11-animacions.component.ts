@@ -17,9 +17,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrls: ['./m11-animacions.component.css'],
   animations: [
     trigger('boxState', [
-      state('small', style({ transform: 'scale(1)', backgroundColor: '#4f46e5' })),
-      state('large', style({ transform: 'scale(1.4)', backgroundColor: '#06b6d4' })),
-      transition('small <=> large', animate('300ms ease-in-out')),
+      state('petit', style({ transform: 'scale(1)', backgroundColor: '#4f46e5' })),
+      state('gran', style({ transform: 'scale(1.4)', backgroundColor: '#06b6d4' })),
+      transition('petit <=> gran', animate('300ms ease-in-out')),
     ]),
     trigger('fadeInOut', [
       transition(':enter', [
@@ -33,9 +33,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class M11_AnimacionsComponent {
-  state: 'small' | 'large' = 'small';
-  show = true;
+  estatMida: 'petit' | 'gran' = 'petit';
+  estatMostrar: boolean = true;
 
-  toggleSize() { this.state = this.state === 'small' ? 'large' : 'small'; }
-  toggleShow() { this.show = !this.show; }
+  canviarMida() { this.estatMida = this.estatMida === 'petit' ? 'gran' : 'petit'; }
+  canviarMostrar() { this.estatMostrar = !this.estatMostrar; }
 }

@@ -21,7 +21,7 @@ export class M14Component {
   a: number | null = null;
   b: number | null = null;
 
-  get sum(): number {
+  get sumar(): number {
     const x = Number(this.a) || 0;
     const y = Number(this.b) || 0;
     return x + y;

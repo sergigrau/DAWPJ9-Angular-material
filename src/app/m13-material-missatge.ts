@@ -16,7 +16,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 export class M13Component {
   constructor(private snack: MatSnackBar) {}
 
-  greet() {
+  salutacio() {
     this.snack.open('Hola! Salutacions.', 'Tancar', { duration: 2000 });
   }
 }
