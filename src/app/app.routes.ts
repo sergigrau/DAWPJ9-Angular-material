@@ -13,6 +13,7 @@ import { M11_AnimacionsComponent } from './m11-animacions.component';
 import { M12Component } from './m12.component';
 import { M13Component } from './m13-material-missatge';
 import { M14Component } from './m14-material-inputs.component';
+import { M15Component } from './m15-material-inputs.component';
 
 export const routes: Routes = [
   { path: 'm01', component: M01_SalutacioComponent },
@@ -29,6 +30,7 @@ export const routes: Routes = [
   { path: 'm12', component: M12Component },
   { path: 'm13', component: M13Component },
   { path: 'm14', component: M14Component },
+  { path: 'm15', component: M15Component },
 
   { path: '', redirectTo: '/m01', pathMatch: 'full' },
   { path: '**', redirectTo: '/m01' }

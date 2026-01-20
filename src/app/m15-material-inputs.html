@@ -1,0 +1,20 @@
+<div class="m15">
+  <h3>M15 - Checkboxes i Radios (Material)</h3>
+
+  <div class="row">
+    <mat-checkbox [(ngModel)]="casellaA">Checkbox A</mat-checkbox>
+    <mat-checkbox [(ngModel)]="casellaB">Checkbox B</mat-checkbox>
+    <mat-checkbox [(ngModel)]="casellaC">Checkbox C</mat-checkbox>
+  </div>
+
+  <div class="row">
+    <label>Tria una opció:</label>
+    <mat-radio-group [(ngModel)]="radioSeleccionat">
+      <mat-radio-button *ngFor="let opt of opcionsRadio" [value]="opt">{{ opt }}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="summary">
+    <p>Estat: {{ resum }}</p>
+  </div>
+</div>

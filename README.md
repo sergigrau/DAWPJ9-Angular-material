@@ -37,3 +37,5 @@
 - **`src/app/m13-material-missatge.ts`**: M13 — Material Message: Integration with Angular Material to display messages/dialogs (see related HTML/CSS files).
 
 - **`src/app/m14-material-inputs.component.ts`**: M14 — Material Inputs: Examples of inputs/controls using Angular Material (includes HTML and CSS).
+
+- **`src/app/m15-material-inputs.component.ts`**: M15 — Material Inputs (Checkbox/Radio): Component demonstrating Angular Material checkboxes and radio buttons with two-way binding and a summary display.
