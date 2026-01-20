@@ -1,7 +1,7 @@
 # DAW2PJ9
 
 <p align="center">
-  <img src="https://www.jesuites.net/wp-content/themes/jesuitas/img/logo.svg" alt="Jesuïtes Logo" height="80"/>
+  <img src="https://ca.wikipedia.org/wiki/Material_Design#/media/Fitxer:Google_Material_Design_Logo.svg" alt="Jesuïtes Logo" height="80"/>
   <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" height="80"/>
 </p>
 
