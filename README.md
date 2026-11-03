@@ -1,43 +1,65 @@
-# DAW2PJ9
+# DAWPJ9 - Angular Material
 
-<p align="center">
+Repositori d'exercicis pràctics d'Angular per al mòdul DAW, actualitzat a **Angular 22** i amb exemples de:
 
-  <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" height="80"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Material_Design_Logo.svg" height="80"/>
-  <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" height="80"/>
-</p>
+- components standalone
+- templates i bindings
+- directrius estructurals (`*ngIf`, `*ngFor`, `@for`)
+- pipes
+- formularis amb `FormsModule`
+- consum de serveis HTTP
+- Angular Material
+- animacions amb l'enfocament nou (`animate.enter` / `animate.leave`)
 
-<h1>Angular Classroom Workshop</h1>
+## Requisits
 
+- **Node.js**: `v24.15.0` o superior (recomanat amb `nvm`)
+- **npm**: versió compatible amb Node 24
 
-## Files and Descriptions
+Exemple amb `nvm`:
 
-- **`src/app/m01-salutacio.component.ts`**: M01 — Greeting: Component that displays a simple welcome message.
+```bash
+source ~/.nvm/nvm.sh
+nvm install 24.15.0
+nvm use 24.15.0
+```
 
-- **`src/app/m02-suma.component.ts`**: M02 — Sum: Example component that performs and displays a sum (inputs/interactions).
+## Instal·lació i execució
 
-- **`src/app/m02bis-suma.component.ts`**: M02bis — Sum (variant): Alternative version of the sum component.
+```bash
+npm install
+npm start
+```
 
-- **`src/app/m03-iterador.component.ts`**: M03 — Iterator: Demonstrates using *ngFor to iterate and render lists.
+Compilació de producció:
 
-- **`src/app/m04-pomodoro.component.ts`**: M04 — Pomodoro: Component implementing a Pomodoro-style timer.
+```bash
+npm run build
+```
 
-- **`src/app/m05-bindings.component.ts`**: M05 — Bindings: Shows property and event bindings (includes Pomodoro template).
+## Estructura d'exercicis
 
-- **`src/app/m06-directives.component.ts`**: M06 — Directives: Examples of using/creating custom directives.
+| Ruta | Exercici | Fitxer principal | Què treballa |
+|---|---|---|---|
+| `/m01` | M01 Salutació | `src/app/m01-salutacio.component.ts` | Component mínim i interpolació bàsica |
+| `/m02` | M02 Suma | `src/app/m02-suma.component.ts` | Entrada d'usuari, esdeveniments i `*ngIf` |
+| `/m02bis` | M02bis Suma (Forms) | `src/app/m02bis-suma.component.ts` | Two-way binding amb `[(ngModel)]` |
+| `/m03` | M03 Iterador | `src/app/m03-iterador.component.ts` | Llistes i iteració d'elements |
+| `/m04` | M04 Pomodoro | `src/app/m04-pomodoro.component.ts` | Temporitzador reactiu amb signals |
+| `/m05` | M05 Bindings | `src/app/m05-bindings.component.ts` | `@Input`, `@Output` i comunicació pare-fill |
+| `/m06` | M06 Directives | `src/app/m06-directives.component.ts` | `*ngIf`, `*ngFor`, `ngSwitch`, `ngStyle` |
+| `/pipes` | M08 Pipes | `src/app/m08-pipes.component.ts` | Pipes natives i pipes personalitzades |
+| `/alumnes` | M09 Alumnes | `src/app/m9-alumnes.component.ts` | CRUD simple, formulari i `@for` |
+| `/m10` | M10 Logo | `src/app/m10-logo.component.ts` | Càrrega de JSON des d'assets i render de taula |
+| `/m11` | M11 Animacions | `src/app/m11-animacions.component.ts` | Animacions d'entrada/sortida i transicions CSS |
+| `/m12` | M12 Alumnes (API) | `src/app/m12.component.ts` | Servei HTTP i lògica de càrrega |
+| `/m13` | M13 Material Salutació | `src/app/m13-material-missatge.ts` | `MatSnackBar` |
+| `/m14` | M14 Suma (Material) | `src/app/m14-material-inputs.component.ts` | `MatFormField`, `MatInput`, càlcul reactiu |
+| `/m15` | M15 Inputs (Checkbox/Radio) | `src/app/m15-material-inputs.component.ts` | `MatCheckbox`, `MatRadio` i resum de selecció |
 
-- **`src/app/m08-pipes.component.ts`**: M08 — Pipes: Presents custom pipes; see `m8-estrella.pipe.ts` and `m8-inversa.pipe.ts` for examples.
+## Wiki
 
-- **`src/app/m9-alumnes.component.ts`**: M09 — Students: Component and models (`m9-alumne.ts`, `m9-persona.ts`) displaying a list of students with pipes (`m9-nivell.pipe.ts`, `m9-qualificacio.pipe.ts`).
+La descripció detallada de cada exercici és a la wiki del repositori:
 
-- **`src/app/m10-logo.component.ts`**: M10 — Logo: Component that displays/manages the application logo.
+- [Wiki del projecte](https://github.com/sergigrau/DAWPJ9-Angular-material/wiki)
 
-- **`src/app/m11-animacions.component.ts`**: M11 — Animations: Demonstrates Angular animations with associated template and CSS.
-
-- **`src/app/m12.component.ts`**: M12 — Services/Composition: Component with an associated service (`m12.service.ts`) and template (`m12.component.html`) showing service communication.
-
-- **`src/app/m13-material-missatge.ts`**: M13 — Material Message: Integration with Angular Material to display messages/dialogs (see related HTML/CSS files).
-
-- **`src/app/m14-material-inputs.component.ts`**: M14 — Material Inputs: Examples of inputs/controls using Angular Material (includes HTML and CSS).
-
-- **`src/app/m15-material-inputs.component.ts`**: M15 — Material Inputs (Checkbox/Radio): Component demonstrating Angular Material checkboxes and radio buttons with two-way binding and a summary display.
