@@ -1,14 +1,39 @@
-import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+/*
+ * Component que mostra com poden utilitzar esdeveniment DOM
+ * també mostra com utilitzar una pipe
+ * mostra un cronometre pomodoro
+ * @author sergi grau, sergi.grau@fje.edu
+ * @version 1.0
+ * date 15.10.2016
+ * format del document UTF-8
+ *
+ * CHANGELOG
+ * 15.10.2016
+ * - Component que mostra com poden utilitzar esdeveniment DOM
+ * 15.10.2017
+ * - Actualització a Angular 5
+ * 1.12.2020
+ * - Actualització a Angular 11
+ * 24.10.2024
+ * - Actualització a Angular 18
+ * 1-1-2026
+ * - Actualització a Angular 21
+ * NOTES
+ * ORIGEN
+ * Desenvolupament Aplicacions Web. Jesuïtes El Clot
+ */
+
+import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'aplicacio',
   template: `
     <div>
-      <h1>{{ minuts }}:{{ segons }}</h1>
+      <h1>{{ minuts() }}:{{ segons() | number: '2.0-0' }}</h1>
       <p>
         <button (click)="conmutarPausa()">
-          {{ etiquetaBoto }}
+          {{ etiquetaBoto() }}
         </button>
       </p>
     </div>
@@ -16,52 +41,49 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
 })
-export class M04_PomodoroComponent implements OnDestroy {
-  minuts = 0;
-  segons = 0;
-  isPausa = false;
-  etiquetaBoto = '';
+export class M04_PomodoroComponent {
+  private readonly destroyRef = inject(DestroyRef);
+  minuts = signal(0);
+  segons = signal(0);
+  isPausa = signal(false);
+  etiquetaBoto = signal('');
 
-  private temporitzador?: number;
-
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor() {
     this.resetPomodoro();
-    this.temporitzador = window.setInterval(() => {
-      this.tick();
-      this.cdr.detectChanges();
-    }, 1000);
-  }
-
-  ngOnDestroy(): void {
-    if (this.temporitzador) {
-      clearInterval(this.temporitzador);
-    }
+    const timerId = setInterval(() => this.tick(), 1000);
+    this.destroyRef.onDestroy(() => clearInterval(timerId));
   }
 
   resetPomodoro(): void {
-    this.isPausa = true;
-    this.minuts = 19;
-    this.segons = 10;
-    this.etiquetaBoto = 'Inicia';
+    this.isPausa.set(true);
+    this.minuts.set(23);
+    this.segons.set(10);
+    this.etiquetaBoto.set('Inicia');
   }
 
   private tick(): void {
-    if (!this.isPausa) {
-      this.etiquetaBoto = 'Pausa';
+    if (!this.isPausa()) {
+      this.etiquetaBoto.set('Pausa');
 
-      if (--this.segons < 0) {
-        this.segons = 59;
-
-        if (--this.minuts < 0) {
+      const nousSegons = this.segons() - 1;
+      if (nousSegons < 0) {
+        this.segons.set(59);
+        const nousMinuts = this.minuts() - 1;
+        if (nousMinuts < 0) {
           this.resetPomodoro();
+        } else {
+          this.minuts.set(nousMinuts);
         }
+      } else {
+        this.segons.set(nousSegons);
       }
     }
   }
 
   conmutarPausa(): void {
-    this.isPausa = !this.isPausa;
-    this.etiquetaBoto = this.isPausa ? 'Continua' : 'Pausa';
-    this.cdr.detectChanges();
+    this.isPausa.update((valorActual) => !valorActual);
+    if (this.minuts() < 24 || this.segons() < 59) {
+      this.etiquetaBoto.set(this.isPausa() ? 'Continua' : 'Pausa');
+    }
   }
 }

@@ -6,7 +6,7 @@
   <button (click)="canviarMostrar()">{{ estatMostrar ? 'Amaga' : 'Mostra' }}</button>
 </div>
 
-<div *ngIf="estatMostrar" @fadeInOut class="demo-area">
-  <div class="box" [@boxState]="estatMida" (click)="canviarMida()"></div>
+<div *ngIf="estatMostrar" class="demo-area" [animate.enter]="'demo-enter'" animate.leave="demo-leave">
+  <div class="box" [class.box-gran]="estatMida === 'gran'" (click)="canviarMida()"></div>
   <p>Fes click a la caixa per alternar la mida.</p>
 </div>

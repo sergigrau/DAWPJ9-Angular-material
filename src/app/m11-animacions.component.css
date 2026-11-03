@@ -1,2 +1,52 @@
-.demo-area { margin-top:1rem; display:flex; align-items:center; gap:1rem; flex-direction:column; }
-.box { width:120px; height:120px; border-radius:8px; cursor:pointer; }
+.demo-area {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.box {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #4f46e5;
+  transform: scale(1);
+  transition: transform 300ms ease-in-out, background-color 300ms ease-in-out;
+}
+
+.box-gran {
+  background-color: #06b6d4;
+  transform: scale(1.4);
+}
+
+.demo-enter {
+  animation: demo-enter 300ms ease-out;
+}
+
+.demo-leave {
+  animation: demo-leave 200ms ease-in;
+}
+
+@keyframes demo-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes demo-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
